@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Fetch applied jobs for the authenticated user
-    fetch('http://localhost:5000/api/jobs/user/applications', {
+    fetch('http://54.175.146.29:5000/api/jobs/user/applications', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,  // Assuming token is stored in localStorage

@@ -1,7 +1,7 @@
 // serverHelper.js
 //'http://localhost:5000/api/jobs'
 const serverConfig = {
-    backendUrl: 'http://localhost:5000', // Backend server address
+    backendUrl: 'http://54.175.146.29:5000', // Backend server address
     frontendUrl: 'http://23.268.24:3002/index.html', // Frontend server address
   };
   

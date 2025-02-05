@@ -99,10 +99,10 @@ const quill = new Quill('#jobDescriptionEditor', {
     const token = localStorage.getItem('token');
     
     try {
-      console.log('[DEBUG] Submitting to:', 'http://localhost:5000/api/jobs');
+      console.log('[DEBUG] Submitting to:', 'http://54.175.146.29:5000/api/jobs');
       console.log('[DEBUG] Job data:', jobData);
   
-      const response = await fetch('http://localhost:5000/api/jobs', {
+      const response = await fetch('http://54.175.146.29:5000/api/jobs', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

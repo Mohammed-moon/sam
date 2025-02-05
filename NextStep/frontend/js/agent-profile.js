@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loader = document.getElementById('loadingSpinner');
     loader.style.display = 'block';
 
-    fetch('http://localhost:5000/api/jobs', {
+    fetch('http://54.175.146.29:5000/api/jobs', {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
     })
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             jobsList.innerHTML = '<p class="text-muted">No jobs found.</p>';
         } else {
             data.forEach(job => {
-                fetch(`http://localhost:5000/api/jobs/${job._id}`, {
+                fetch(`http://54.175.146.29:5000/api/jobs/${job._id}`, {
                     method: 'GET',
                     headers: { 'Authorization': 'Bearer ' + token }
                 })
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const jobId = jobData._id;
                 
                     // Send DELETE request to the backend
-                    fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+                    fetch(`http://54.175.146.29:5000/api/jobs/${jobId}`, {
                         method: 'DELETE',
                         headers: {
                             'Authorization': 'Bearer ' + token
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 jobsList.appendChild(jobElement);
 
                 // Fetch applicants for the job
-                fetch(`http://localhost:5000/api/jobs/${jobData._id}/applications`, {
+                fetch(`http://54.175.146.29:5000/api/jobs/${jobData._id}/applications`, {
                     method: 'GET',
                     headers: { 'Authorization': 'Bearer ' + token }
                 })
@@ -236,7 +236,7 @@ document.addEventListener('click', function (event) {
                     applicantCard.querySelector('#statusSelect').addEventListener('change', function (e) {
                         const newStatus = e.target.value;
 
-                        fetch(`http://localhost:5000/api/applications/user/${application.user._id}/status`, {
+                        fetch(`http://54.175.146.29:5000/api/applications/user/${application.user._id}/status`, {
                             method: 'PUT',
                             headers: {
                                 'Authorization': 'Bearer ' + token,

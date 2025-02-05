@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const jobListContainer = document.getElementById('recommendedJobList');
         jobListContainer.innerHTML = '<p>Loading jobs...</p>';  // Loading text or spinner
     
-        fetch('http://localhost:5000/api/jobs/recommend' + queryString, {
+        fetch('http://54.175.146.29:5000/api/jobs/recommend' + queryString, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}` // Assuming token is stored in localStorage
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to handle applying for a job
     function applyForJob(jobId) {
-        fetch(`http://localhost:5000/api/jobs/${jobId}/apply`, {
+        fetch(`http://54.175.146.29:5000/api/jobs/${jobId}/apply`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.style.display = 'none';
             formData.append('resume', resumeFile);
 
-            fetch(`http://localhost:5000/api/jobs/${jobId}/apply`, {
+            fetch(`http://54.175.146.29:5000/api/jobs/${jobId}/apply`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,

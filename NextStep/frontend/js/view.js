@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function fetchJobDetails(jobId) {
-    fetch(`http://localhost:5000/api/jobs/${jobId}`, {  // Fixed endpoint
+    fetch(`http://54.175.146.29:5000/api/jobs/${jobId}`, {  // Fixed endpoint
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -106,7 +106,7 @@ function displayJobDetails(job) {
 }
 
 function applyForJob(jobId) {
-    fetch(`http://localhost:5000/api/jobs/${jobId}/apply`, {
+    fetch(`http://54.175.146.29:5000/api/jobs/${jobId}/apply`, {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,

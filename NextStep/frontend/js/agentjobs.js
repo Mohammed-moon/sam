@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loader = document.getElementById('loadingSpinner');
     loader.style.display = 'block';
 
-    fetch('http://localhost:5000/api/jobs', {
+    fetch('http://54.175.146.29:5000/api/jobs', {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
     })
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             jobsList.innerHTML = '<p class="text-muted">No jobs found.</p>';
         } else {
             data.forEach(job => {
-                fetch(`http://localhost:5000/api/jobs/${job._id}`, {
+                fetch(`http://54.175.146.29:5000/api/jobs/${job._id}`, {
                     method: 'GET',
                     headers: { 'Authorization': 'Bearer ' + token }
                 })
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     // Fetch applicants for the job (optional, based on your needs)
-                    fetch(`http://localhost:5000/api/jobs/${jobData._id}/applications`, {
+                    fetch(`http://54.175.146.29:5000/api/jobs/${jobData._id}/applications`, {
                         method: 'GET',
                         headers: { 'Authorization': 'Bearer ' + token }
                     })
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         const jobId = jobData._id;
 
                         // Send DELETE request to the backend
-                        fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+                        fetch(`http://54.175.146.29:5000/api/jobs/${jobId}`, {
                             method: 'DELETE',
                             headers: {
                                 'Authorization': 'Bearer ' + token

@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loader.style.display = 'block';
 
     // Determine if creating or updating
-    fetch('http://localhost:5000/api/profile', {
+    fetch('http://54.175.146.29:5000/api/profile', {
       method: 'GET',
       headers: { 'Authorization': `Bearer ${token}` }
     })
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Create Profile
 function createProfile(formData, loader, token) {
-  fetch('http://localhost:5000/api/profile', {
+  fetch('http://54.175.146.29:5000/api/profile', {
       method: 'POST',
       body: formData,
       headers: {
@@ -160,7 +160,7 @@ function createProfile(formData, loader, token) {
 
 // Update Profile
 function updateProfile(formData, loader, token) {
-  fetch('http://localhost:5000/api/profile', {
+  fetch('http://54.175.146.29:5000/api/profile', {
     method: 'PUT',
     body: formData,
     headers: {
@@ -200,7 +200,7 @@ function getProfile() {
   const loader = document.getElementById('loadingSpinner');
   loader.style.display = 'block';
 
-  fetch('http://localhost:5000/api/profile', {
+  fetch('http://54.175.146.29:5000/api/profile', {
     headers: { 'Authorization': `Bearer ${token}` }
   })
     .then(response => response.json())

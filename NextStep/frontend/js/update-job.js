@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+    fetch(`http://54.175.146.29:5000/api/jobs/${jobId}`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + token,
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function sendJobUpdate(updatedJob) {
-        fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+        fetch(`http://54.175.146.29:5000/api/jobs/${jobId}`, {
             method: 'PUT',
             headers: {
                 'Authorization': 'Bearer ' + token,
