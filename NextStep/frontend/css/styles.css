@@ -1,0 +1,940 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif, 'Open Sans';
+  background-color: rgb(236,237,242);
+  margin: 0;
+  padding: 0;
+}
+/* CSS for logo sizes */
+/* Apply fade-in animation when the section comes into view */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make sure the logo images stay consistent in size */
+.logo {
+  width: 120px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures logos fit within their container */
+}
+
+/* Adjust logo sizes for smaller screens if necessary */
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 80px;
+  }
+}
+
+
+
+
+/* Header Styles */
+header {
+  background: linear-gradient(90deg, #007bff, #00bcd4); /* Gradient background for the header */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif; /* Applying the Montserrat font for the header */
+}
+
+/* Logo Styling */
+/* Header Styles */
+header {
+  background: linear-gradient(90deg, #007bff, #00bcd4); /* Gradient background for the header */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* Ensures the logo and button align vertically */
+  transition: all 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif; /* Applying the Montserrat font for the header */
+}
+
+/* Logo Styling */
+header .logo h2 {
+  font-family: 'Lora', serif; /* Elegant font for the logo */
+  font-weight: 700;
+  font-size: 2.2rem; /* Reduced size */
+  letter-spacing: 1.5px;
+  transition: transform 0.3s ease-in-out;
+  color: #ffffff;
+  margin-bottom: 0; /* Remove any extra margin from the bottom */
+  padding-top: 0; /* Remove padding at the top to center the logo */
+}
+
+header .logo h2:hover {
+  transform: scale(1.1); /* Logo scale effect */
+  color: #ffffff; /* Slight color change when hovered */
+}
+
+/* Button (Login) Styles */
+header .btn {
+  font-family: 'Montserrat', sans-serif; /* Using Montserrat for buttons */
+  font-weight: 600;
+  font-size: 1rem; /* Reduced size */
+  padding: 8px 18px;
+  border: none;
+  background-color: #ffffff;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  margin-top: 0; /* Align the button to the center vertically */
+}
+
+/* Button Hover Effects */
+header .btn:hover {
+  background-color: #00bcd4;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+  transform: translateY(-2px); /* Button lift effect */
+}
+header .logo a {
+  text-decoration: none; /* Removes underline from the logo link */
+}
+
+
+/* Main Section Styles */
+.container {
+  padding: 3rem 0;
+  max-width: 1000px;
+  margin: 0 auto;  /* Centers the container */
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;  /* Using Montserrat font */
+  font-weight: 700;
+  font-size: 2rem; /* Reduced size */
+  color: #333;
+  text-align: center; /* Ensures the title is centered */
+  margin-bottom: 1.5rem; /* Adds spacing below the title */
+}
+
+p {
+  font-family: 'Lora', serif;  /* Elegant serif font */
+  color: #555;
+  font-size: 1.1rem; /* Slightly larger text for readability */
+  margin-top: 1rem;
+  text-align: center;  /* Centers the paragraph */
+  line-height: 1.7;
+}
+
+/* Button Styling */
+button {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 8px 16px;  /* Smaller padding to reduce size */
+  font-size: 0.85rem;  /* Further reduced font size */
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 10px; /* Rounded corners */
+  margin: 0px 0; /* Remove vertical spacing between buttons */
+}
+
+/* Column Styling */
+.col-md-6 {
+  padding: 0; /* Remove padding from columns */
+  margin: 0;  /* Remove margin */
+ 
+}
+
+
+/* Row Styling */
+.row {
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Center the buttons vertically */
+  gap: 0px; /* Remove space between columns */
+}
+
+/* Hover Effect */
+button:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+/* Active Button Effect */
+button:active {
+  transform: scale(1.02); /* Slight shrink on click */
+}
+
+/* Button Colors */
+.btn-primary {
+  background: linear-gradient(90deg, #007bff, #00bcd4); /* Gradient background */
+  color: white;
+  border: none; /* Remove border */
+}
+
+.btn-info {
+  background: linear-gradient(90deg, #007bff, #00bcd4); /* Gradient background */
+  color: white;
+  border: none; /* Remove border */
+}
+
+/* Image Section Styling */
+.image-section {
+  background-color: #f1f1f1;
+  padding: 0;  /* Remove padding */
+  margin: 0;  /* Remove margin */
+  height: 100vh;  /* Full height of the viewport */
+  width: 100%;  /* Full width of the viewport */
+  position: relative; 
+   /* Allows the image to fill the section */
+   
+}
+
+.image-section .row,
+.image-section .col-12,
+.image-section .col-md-8 {
+  padding: 0;  /* Remove padding from row and columns */
+  margin: 0;  /* Remove margin from row and columns */
+  height: 100%;  /* Ensure row and columns fill the section */
+}
+
+.image-section img {
+  position: absolute;  /* Position the image absolutely within the section */
+  top: 0;  /* Align image to the top */
+  left: 0;  /* Align image to the left */
+  width: 100%;  /* Stretch the image to 100% of the section width */
+  height: 100%;  /* Stretch the image to 100% of the section height */
+  object-fit: cover;  /* Ensure the image covers the section without distortion */
+  border-radius: 0;  /* Remove any border-radius */
+  box-shadow: none;  /* Remove any shadow */
+  
+}
+.site-section .logo {
+  max-width: 130px;  /* Limit the width of the logos */
+  height: auto;  /* Maintain aspect ratio */
+  margin: 20px 0;  /* Add spacing between logos */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #343a40;
+  padding: 4rem 0;
+  color: white;
+}
+
+footer p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem; /* Reduced size */
+  color: #dcdcdc;
+}
+
+/* Footer Link Styles */
+footer a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff6f61;  /* Accent color on hover */
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation for Footer Text */
+footer .container p {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+footer .container h6, footer .container h1 {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+/* Animation for Individual Logo and Social Icons */
+footer .btn-floating {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  footer .col-md-3,
+  footer .col-md-2,
+  footer .col-md-4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  footer .logo h2 {
+    font-size: 1.8rem; /* Smaller size for responsiveness */
+  }
+
+  footer .container h1 {
+    font-size: 2rem; /* Smaller size for smaller screens */
+  }
+
+  footer .container p {
+    font-size: 0.95rem; /* Slightly smaller font size for smaller screens */
+  }
+
+  footer .container h2 {
+    font-size: 1.8rem; /* Smaller size for h2 */
+  }
+
+  footer .container h4 {
+    font-size: 1.4rem; /* Smaller size for h4 */
+  }
+
+  footer .social-icons a {
+    font-size: 1.2rem;
+    margin: 0 10px;
+  }
+}
+
+/* Footer Bottom Section */
+footer .text-center.p-3 {
+  position: fixed; /* Fix it to the bottom of the page */
+  bottom: 0; /* Position it at the bottom */
+  width: 100%; /* Full width */
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent dark background */
+  color: #fff; /* White text color */
+  padding: 15px 0; /* Add vertical padding */
+  text-align: center; /* Center the content */
+  font-size: 0.9rem; /* Set a smaller font size */
+  z-index: 1000; /* Make sure it's above other content */
+}
+
+footer .text-center.p-3 a {
+  color: #ff6f61; 
+  text-decoration: none; 
+  transition: color 0.3s ease; 
+}
+
+footer .text-center.p-3 a:hover {
+  color: #ff9e85; 
+}
+
+/* Footer Section Custom Styling */
+footer .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+footer .lead {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #dcdcdc;
+}
+
+/* Social Media Button Styles */
+footer .social-buttons a {
+  transition: transform 0.3s ease;
+}
+
+footer .social-buttons a:hover {
+  transform: scale(1.1);  /* Slight scale effect on hover */
+}
+
+/* Custom styling for footer link hover effects */
+footer .social-buttons .btn-floating:hover {
+  background-color: #ff6f61; /* Accent color on hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header .logo h2 {
+    font-size: 1.8rem; /* Smaller size for responsiveness */
+  }
+
+  .container h1 {
+    font-size: 2rem; /* Smaller size for smaller screens */
+  }
+
+  .container p {
+    font-size: 0.95rem; /* Slightly smaller font size for smaller screens */
+  }
+
+  .container h2 {
+    font-size: 1.8rem; /* Smaller size for h2 */
+  }
+
+  .container h4 {
+    font-size: 1.4rem; /* Smaller size for h4 */
+  }
+}
+
+/* Section for next Site Stats */
+#next {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 0;
+}
+
+#next .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#next .lead {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+#next .block__19738 {
+  margin-top: 50px;
+}
+
+#next .col-md-3 {
+  text-align: center;
+  padding: 15px 0; /* Adjusted padding for better spacing */
+}
+
+#next .number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+#next .caption {
+  font-size: 1.1rem;
+  font-family: 'Lora', serif;
+  color: #ffffff;
+  margin-top: 20px; /* Increased space between number and caption */
+  margin-left: 40px;
+}
+
+#next .overlay-primary {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive Design for the Stats Section */
+@media (max-width: 768px) {
+  #next .section-title {
+    font-size: 2rem; /* Smaller title size on smaller screens */
+  }
+
+  #next .lead {
+    font-size: 1rem; /* Smaller lead text size */
+  }
+
+  #next .number {
+    font-size: 2.5rem; /* Smaller number on small screens */
+  }
+
+  /* Adjust caption on smaller screens */
+  #next .caption {
+    font-size: 1rem; /* Smaller font size */
+    font-family: 'Lora', serif;
+    color: #ffffff;
+    margin-top: 15px; /* Reduced margin for smaller screens */
+    padding-left: 40px; /* Slightly increased padding for responsiveness */
+  }
+
+  /* Adjust column layout on small screens for better spacing */
+  #next .col-md-3 {
+    margin-bottom: 20px; /* Adding space between columns on smaller screens */
+  }
+}
+
+/* Custom CSS to ensure logos are of same size and spacing */
+.site-section .logo {
+  max-width: 150px;  /* Set a max width to maintain consistency */
+  margin-bottom: 30px; /* Space between logos */
+  transition: transform 0.3s ease;
+}
+
+.site-section .logo:hover {
+  transform: scale(1.1);  /* Slight zoom effect on hover */
+}
+
+/* Margin and spacing adjustments */
+.site-section .col-6 {
+  margin-bottom: 20px;  /* Space between logos on mobile screens */
+}
+
+.site-section .text-center {
+  text-align: center;  /* Ensure text is centered */
+}
+  /* section for net app*/
+
+
+  /*  add color oerly for backgroun */
+  /* Background with overlay and fixed positioning */
+.bg-image-overlay {
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  color: white;
+}
+
+/* Overlay effect */
+.bg-image-overlay::before {
+  content: ''; /* Create a pseudo-element for the overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent blue overlay */
+  z-index: 1; /* Ensure overlay is above the image */
+}
+
+/* Ensure the content stays above the overlay */
+.bg-image-overlay .container {
+  position: relative;
+  z-index: 2; /* Keep text above the overlay */
+}
+
+/* Title and description styling */
+h2.text-white {
+  color: #fff !important;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.lead.text-white {
+  color: #fff !important;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjust button styles */
+.btn-dark {
+  background-color: #333;
+  border-color: #333;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #555;
+  border-color: #555;
+}
+
+/* Ensure image responsiveness */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+  border-radius: 10px;
+}
+/* Styling for the buttons */
+section .btn {
+  display: inline-block;
+  margin-bottom: 10px; /* Add some space between the buttons */
+  transition: all 0.3s ease;
+  padding: 6px 12px; /* Reduced padding to make the buttons smaller */
+  font-size: 14px; /* Smaller font size */
+  border-radius: 3px; /* Slightly rounded corners for a more compact look */
+}
+
+/* Center the button container */
+section p.mb-0 {
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Center the content horizontally */
+}
+
+/* Flex container for the buttons */
+section .btn-container {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 10px; /* Add space between buttons */
+}
+
+/* Adjusting buttons for different screen sizes */
+@media (max-width: 768px) {
+  section .btn-container {
+    flex-direction: column; /* Stack the buttons vertically on small screens */
+    align-items: center; /* Center the buttons on the vertical axis */
+  }
+  
+  section .btn {
+    width: auto; /* Allow buttons to have their natural width */
+    padding: 8px 16px; /* Slightly larger padding on mobile for ease of tap */
+    font-size: 14px; /* Keep the font size smaller on mobile */
+    margin-bottom: 10px; /* Add space between stacked buttons */
+  }
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 768px) {
+  section .btn-container {
+    justify-content: center; /* Center the buttons horizontally on larger screens */
+  }
+  
+  section .btn {
+    width: auto; /* Ensure buttons use their natural width */
+  }
+}
+.custom-img-container {
+  display: flex;
+  justify-content: flex-end; /* Align image to the right */
+  align-items: center; /* Center it vertically */
+  height: 100%; /* Adjust to match the height of the text container */
+}
+
+.custom-img {
+  width: 120%; /* Scale the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+  transform: scale(1.3); /* Zoom in the image */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+/* Optional: Hover effect for zoom 
+.custom-img:hover {
+  transform: scale(1.7); 
+}
+*/
+
+/* Heading Styles 
+.custom-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Styles 
+.custom-text {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 30px;
+  max-width: 600px; 
+  margin-left: auto; 
+  margin-right: auto;
+} */
+
+/* Button Styles */
+.custom-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold; /* Makes the font bold */
+  border-radius: 50px;
+  background-color: #00bcd4;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+
+.custom-btn:hover {
+  background-color: #008c9e;
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+  transform: translateY(-2px); /* Button lift effect */
+}
+
+.custom-btn:active {
+  transform: translateY(2px); /* Button click effect */
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Flex container to hold both sections */
+  .custom-container {
+    display: flex;
+    flex-direction: row; /* Place the content side-by-side */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it takes full width */
+  }
+  
+  /* Text and Button Section - Left */
+  .custom-text-section {
+    flex: 1; /* Let the text section take up available space */
+    margin-right: 20px; /* Space between text and image */
+  }
+
+ /*  .custom-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }*/
+
+ /*  .custom-text {
+    font-family: 'Lora', serif;
+    font-size: 1rem; 
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }*/
+
+  .custom-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 50px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+
+  .custom-btn:hover {
+    background-color: #008c9e;
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+    transform: translateY(-2px); /* Button lift effect */
+  }
+
+  .custom-btn:active {
+    transform: translateY(2px); /* Button click effect */
+  }
+
+  /* Image Section - Right */
+  .custom-img-container {
+    flex: 1; /* Let the image section take up remaining space */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+  }
+  
+  .custom-img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the container */
+    transform: scale(1); /* Slight zoom-in effect */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+  }
+  
+  .custom-img:hover {
+    transform: scale(1); /* Zoom in on hover */
+  }
+}
+@media (max-width: 576px) {
+  /* General Body Styles */
+  body {
+    padding: 0 15px; /* More padding for very small screens */
+    font-size: 14px; /* Adjust font size for better readability on small screens */
+  }
+
+ 
+
+  /* Image Section Styling */
+  .image-section img {
+    width: 100%; /* Ensure image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image covers the container without distortion */
+  }
+
+ 
+
+  /* Next Section (Statistics Section) */
+  #next .section-title {
+    font-size: 1.8rem; /* Smaller title size */
+  }
+
+  #next .lead {
+    font-size: 1rem; /* Adjust lead font size */
+  }
+
+  #next .number {
+    font-size: 2rem; /* Smaller number size for better readability */
+  }
+
+  #next .caption {
+    font-size: 1rem; /* Adjust caption size */
+  }
+
+  /* Adjust Columns for Small Screens */
+  #next .col-md-3 {
+    margin-bottom: 15px; /* Space between columns */
+  }
+
+  /* Custom Button Styles */
+  .custom-btn {
+    font-size: 0.9rem; /* Smaller font size for buttons */
+    padding: 10px 20px; /* Reduced padding */
+  }
+
+  /* Responsive Image Adjustments */
+  .custom-img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    object-fit: cover; /* Ensure image fills container without distortion */
+  }
+  
+  .custom-img-container {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center image and text */
+  }
+  
+  /* Ensure content is centered and looks good on smaller screens */
+  .custom-text-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+/* Button Styles */
+.custom-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold; /* Makes the font bold */
+  border-radius: 50px;
+  background-color: #00bcd4;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+  /* Button Container for Small Screens */
+  section .btn-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+  }
+}
+.testimony-full {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  
+}
+
+.owl-carousel {
+  width: 100%;
+}
+
+.testimonial-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.testimonial-item .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-item .col-lg-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.testimonial-item blockquote {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.testimonial-item img {
+  max-width: 400px; /* Adjust image size as needed */
+  margin-top: 0px;
+  margin-bottom: 0;
+  
+ 
+}
+.custom-heading i {
+  margin-right: 10px;  /* Adjust the space between the icon and text */
+}
+
+.comment-box {
+  display: inline-block; /* Keeps it a block-level element, but fits to text size */
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 20px; /* Add space inside the box */
+  font-size: 18px; /* Text size */
+  border-radius: 15px; /* Rounded corners for the comment box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: soft shadow for 3D effect */
+  max-width: 600px; /* Optional: limit the width of the box */
+  margin: 20px 0; /* Optional: spacing between paragraphs */
+  line-height: 1.6; /* Spacing between lines for readability */
+}
+.comment-box {
+  display: inline-block;        /* Keeps it a block-level element, but fits to text size */
+  background-color: #f0f0f0;    /* Light gray background */
+  padding: 20px;                /* Add space inside the box */
+  font-size: 18px;              /* Text size */
+  border-radius: 15px;          /* Rounded corners for the comment box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: soft shadow for 3D effect */
+  max-width: 600px;             /* Optional: limit the width of the box */
+  margin: 20px 0;               /* Optional: spacing between paragraphs */
+  line-height: 1.6;             /* Spacing between lines for readability */
+}
+
+.comment-box cite {
+  display: block;               /* Display the cite on its own line */
+  margin-top: 10px;              /* Space between the quote and the citation */
+  font-style: italic;           /* Italicize the citation */
+  color: #555;                  /* Lighter color for the citation */
+}

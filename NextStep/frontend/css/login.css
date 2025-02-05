@@ -1,0 +1,90 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #007bff, #00bcd4); /* Gradient background for the header */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif; /* Applying the Montserrat font for the header */
+  }
+  
+  /* Logo Styling */
+  /* Header Styles */
+  header {
+    background: linear-gradient(90deg, #007bff, #00bcd4); /* Gradient background for the header */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Ensures the logo and button align vertically */
+    transition: all 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif; /* Applying the Montserrat font for the header */
+  }
+  header .logo a {
+    text-decoration: none; /* Removes underline from the logo link */
+}
+  /* Logo Styling */
+  header .logo h2 {
+    font-family: 'Lora', serif; /* Elegant font for the logo */
+    font-weight: 700;
+    font-size: 2.2rem; /* Reduced size */
+    letter-spacing: 1.5px;
+    transition: transform 0.3s ease-in-out;
+    color: #ffffff;
+    margin-bottom: 0; /* Remove any extra margin from the bottom */
+    padding-top: 0; /* Remove padding at the top to center the logo */
+  }
+  
+  header .logo h2:hover {
+    transform: scale(1.1); /* Logo scale effect */
+    color: #ffffff; /* Slight color change when hovered */
+  }
+  
+  /* Button (Login) Styles */
+  header .btn {
+    font-family: 'Montserrat', sans-serif; /* Using Montserrat for buttons */
+    font-weight: 600;
+    font-size: 1rem; /* Reduced size */
+    padding: 8px 18px;
+    border: none;
+    background-color: #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    margin-top: 0; /* Align the button to the center vertically */
+  }
+  
+  /* Button Hover Effects */
+  header .btn:hover {
+    background-color: #00bcd4;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+    transform: translateY(-2px); /* Button lift effect */
+  }
+  

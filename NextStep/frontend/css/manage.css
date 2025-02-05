@@ -1,0 +1,535 @@
+/* Reset some default styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #007bff, #00bcd4); /* Gradient background for the header */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Logo Styling */
+header .logo h2 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    transition: transform 0.3s ease-in-out;
+    color: #ffffff;
+}
+header .logo a {
+    text-decoration: none; /* Removes underline from the logo link */
+}
+
+header .logo h2:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex; /* Flex to align the image and text */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar-links a img {
+    width: 50px; /* Set image size */
+    height: 50px; /* Set image size */
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 10px; /* Space between the image and the text */
+}
+
+.navbar-links a i {
+    margin-right: 5px;
+}
+
+.navbar-links a:hover {
+    background-color: #575757;
+}
+
+/* Mobile Navbar Styles */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #007bff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .navbar-links a {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-toggler.active + .navbar-links {
+        display: flex;
+    }
+}
+
+/* Show navbar links when toggler is active */
+.navbar-toggler.active {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .navbar-links {
+        background-color: #007bff;
+    }
+}
+
+/* Container for main content */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+/* Left side for filters */
+.filter-section {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.filter-section h2 {
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.filter input, .filter select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Hide location input when "Remote" is selected */
+#locationFilter {
+    display: block;
+}
+
+#locationType {
+    margin-bottom: 10px;
+}
+
+/* Right side for search bar and search button */
+.search-section {
+    width: 65%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.search-section h2 {
+    margin-bottom: 20px;
+}
+
+.search-bar-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Job List Styling */
+.job-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.job-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.job-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+.job-item button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.job-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Style for Resume Upload */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+#resumeFile {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    color: #555;
+}
+
+#resumeFile:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Styling the 'Apply with Resume' Button */
+#applyWithResume {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#applyWithResume:hover {
+    background-color: #218838;
+}
+
+/* Error Message Styling */
+#error-message {
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Close Modal Button */
+.close-modal {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.close-modal:hover {
+    background-color: darkred;
+}
+
+/* Modal Background Styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    #applyWithResume {
+        padding: 10px 15px;
+    }
+
+    #resumeFile {
+        padding: 8px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .filter-section,
+    .search-section {
+        width: 100%;
+    }
+
+    .job-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-list {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-links {
+        background-color: #007bff;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-toggler.active + .navbar-links {
+        display: flex;
+    }
+}
+
+/* Recommended Jobs Section */
+.recommended-jobs-section {
+    background-color: #f4f6f9;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.recommended-jobs-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Job Item Hover Effect */
+.job-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Job Title */
+.job-item h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Job Description and Other Details */
+.job-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Apply and View Buttons */
+.job-item button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.job-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for company logo */
+.company-logo {
+    width: 60px; /* Increase the logo size */
+    height: 60px; /* Increase the logo size */
+    border-radius: 50%; /* Keep the logo circular */
+    margin-right: 20px; /* Increase space between logo and job title */
+    object-fit: cover; /* Ensure the logo maintains aspect ratio */
+}
+
+/* Job header style */
+.job-header {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Align logo and title vertically */
+    gap: 5px; /* Add space between logo and title */
+    background-color: whitesmoke; /* Blue background */
+    padding: 10px; /* Add padding around content */
+    border-radius: 8px; /* Optional: Add rounded corners for the header */
+}
+
+/* Job title style */
+.job-header h3 {
+    font-size: 24px; /* Smaller font size for the job title */
+    margin: 0; /* Remove any default margins */
+    color: #007bff; /* White text color for the title */
+}
+
+/* Optional: Add hover effect on the logo */
+.job-header .company-logo:hover {
+    opacity: 0.8; /* Slightly dim the logo on hover */
+    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .job-header {
+        /* Remove column stacking, keep horizontal alignment */
+        flex-direction: row; /* Ensure items stay horizontally aligned */
+        align-items: center; /* Align logo and title vertically */
+        gap: 10px; /* Adjust gap between logo and title */
+        padding: 10px 15px; /* Adjust padding for mobile */
+    }
+
+    /* Adjust company logo size for smaller screens */
+    .company-logo {
+        margin-right: 10px; /* Ensure spacing between logo and title */
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Adjust job title font size for mobile */
+    .job-header h3 {
+        font-size: 24px;
+    }
+}
+
+/* Optional: Further adjust styles for very small screens */
+@media (max-width: 480px) {
+    .job-header {
+        gap: 5px; /* Reduce gap between items */
+    }
+
+    /* Adjust logo size for very small screens */
+    .company-logo {
+        width: 45px; /* Smaller logo size */
+        height: 45px;
+    }
+
+    .job-header h3 {
+        font-size: 24px; /* Further reduce font size */
+    }
+}

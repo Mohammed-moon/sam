@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - NextStep</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/dashboard.css">
+
+  <style>
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div class="text-center mt-4">
+            <h3>Welcome to Your Dashboard!</h3>
+            <p>Your Profile Details:</p>
+
+            <!-- Display profile information -->
+            <div id="profile-info">
+              <p>Full Name: <span id="full-name"></span></p>
+              <p>Phone: <span id="phone"></span></p>
+              <p>Bio: <span id="bio"></span></p>
+              <p>Skills: <span id="skills"></span></p>
+              <p>Education: <span id="education"></span></p>
+              <p>Experience: <span id="experience"></span></p>
+            </div>
+
+            <div class="mt-4">
+              <button id="edit-profile" class="btn btn-primary">Edit Profile</button>
+              <button id="logout" class="btn btn-danger">Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const token = localStorage.getItem('auth_token');
+    if (!token) {
+      window.location.href = '/login.html'; // Redirect to login if no token is found
+    }
+
+    // Fetch the user's profile information
+    async function fetchProfile() {
+      try {
+        const response = await fetch("http://localhost:5000/api/profile", {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          }
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          // Populate profile information on the dashboard
+          document.getElementById('full-name').innerText = data.fullName;
+          document.getElementById('phone').innerText = data.phone;
+          document.getElementById('bio').innerText = data.bio;
+          document.getElementById('skills').innerText = data.skills.join(', ');
+          document.getElementById('education').innerText = data.education.map(item => `${item.degree} from ${item.university}`).join(', ');
+          document.getElementById('experience').innerText = data.experience.map(item => `${item.role} at ${item.company} (${item.years} years)`).join(', ');
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+      }
+    }
+
+    // Edit Profile redirect
+    document.getElementById('edit-profile').addEventListener('click', function () {
+      window.location.href = '/create-profile.html';
+    });
+
+    // Logout functionality
+    document.getElementById('logout').addEventListener('click', function () {
+      localStorage.removeItem('auth_token');
+      window.location.href = '/login.html';
+    });
+
+    // Fetch the profile information on page load
+    fetchProfile();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
